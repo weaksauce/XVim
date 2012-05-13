@@ -383,6 +383,7 @@ static NSMutableDictionary *s_stringToKeyCode = NULL;
 	XVimKeyStroke *primaryKeyStroke = nil;
 	NSUInteger modifierFlags = event.modifierFlags & (NSShiftKeyMask | NSAlternateKeyMask | NSControlKeyMask | NSCommandKeyMask);
 	NSString *charactersIgnoringModifiers = [event charactersIgnoringModifiers];
+    NSLog(@"char ignor mods: %@", charactersIgnoringModifiers);
 	NSString *characters = [event characters];
 	
 	unichar unmodifiedKeyCode = [charactersIgnoringModifiers characterAtIndex:0];

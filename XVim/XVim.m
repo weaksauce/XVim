@@ -95,6 +95,13 @@ static XVim* s_instance = nil;
                                  object: nil];
 }
 
++ (void) initForTesting{
+    [Logger defaultLogger].level = LogTrace;
+    // Allocate singleton instance
+	s_instance = [[XVim alloc] init];
+	[s_instance parseRcFile];
+}
+
 + (XVim*)instance
 {
 	return s_instance;
@@ -225,7 +232,10 @@ static XVim* s_instance = nil;
 															  error:NULL];
 	for (NSString *string in [keymapData componentsSeparatedByString:@"\n"])
 	{
-		[self.excmd executeCommand:[@":" stringByAppendingString:string] inWindow:nil];
+        NSLog(@"String: %@", string);
+        if([string length] > 0){
+            [self.excmd executeCommand:[@":" stringByAppendingString:string] inWindow:nil];
+        }
 	}
 }
 
