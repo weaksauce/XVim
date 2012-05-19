@@ -14,8 +14,8 @@
 #import "XVimKeyStroke.h"
 #import "XVim.h"
 
-#define GET_INSERTION_POINT(x) ([[[((NSTextView*)[[x sourceView] view]) selectedRanges] objectAtIndex:0] rangeValue].location)
-#define SET_INSERTION_POINT(x, y) ([((NSTextView*)[[x sourceView] view]) setSelectedRange:NSMakeRange(y,0)])
+#define MAX_TESTCASES 100
+#define CHECK_FILE_ERROR(error, filename) if(0 != [error code]){NSLog(@"Error opening file: %@", filename); break;}
 
 #pragma mark Start Tests
 XVimSourceView *testsourceview;
@@ -40,60 +40,48 @@ NSTextView *txtview;
     [testwindow release];
     [super tearDown];
 }
-- (void)test_w{
-    NSLog(@"testing w");
-//    XVimKeyStroke *keystroke = [[XVimKeyStroke alloc] initWithKeyCode:'w' modifierFlags:0];
-    NSEvent *keypress = [NSEvent keyEventWithType:NSKeyDown location:NSMakePoint(0,0) modifierFlags:0 timestamp:400030404 windowNumber:0 context:[NSGraphicsContext currentContext] characters:@"w" charactersIgnoringModifiers:@"w" isARepeat:NO keyCode:119];
-    
-    SET_INSERTION_POINT(testwindow, 0);
-//    [testwindow handleKeyEvent:keystroke];
-    NSUInteger res = GET_INSERTION_POINT(testwindow);
-    NSLog(@"insertionpoint before: %lu", res);
-//    [testwindow handleKeyStroke:keystroke];
-    [testwindow handleKeyEvent:keypress];
-    res = GET_INSERTION_POINT(testwindow);
-    NSLog(@"insertionpoint after: %lu", res);
-    STAssertNil(nil,@"not nil");
-}
 
-//- (void)test_E{
-//    NSLog(@"testing E");
-//    NSLog(@"string is: %@", [testsourceview string]);
-//    XVimWordInfo info;
-//    info.findEndOfWord = TRUE;
-//    NSUInteger to = 0; 
-//    NSUInteger oldto = 0; 
-//    NSString* word;
-//    while (true){
-//        to = [testsourceview wordsForward:to count:1 option:MOTION_OPTION_NONE info:&info];
-//        NSLog(@"to: %lu", to);
-//        if (to >= [[testsourceview string] length]) {
-//            break;
-//        }
-//        NSLog(@"range (%lu, %lu)", oldto, to);
-//        word = [[[testsourceview string] substringWithRange:NSMakeRange(oldto, info.lastEndOfWord-oldto+1)] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
-//        NSLog(@"last word found: \"%@\"", word);
-//        if(to == oldto) break;
-//        oldto = to;
-//    }
-//
-//    [testsourceview release];
-//    testsourceview = nil;
-//    STAssertNil(testsourceview, @"testsourceview not nil");
-//}
-//
-//- (void)test_e{
-//    NSLog(@"testing E");
-//    NSLog(@"string is: %@", [testsourceview string]);
-//    XVimWordInfo info;
-//    info.findEndOfWord = TRUE;
-//    NSUInteger to = [testsourceview wordsForward:0 count:5 option:MOTION_OPTION_NONE info:&info];
-//    NSLog(@"to is %lu", to);
-//    NSLog(@"info.lastendofword is %lu", info.lastEndOfWord);
-//    STAssertTrue(TRUE, @"it is true");
-//    [testsourceview release];
-//    testsourceview = nil;
-//    STAssertNil(testsourceview, @"testsourceview not nil");
-//}
+- (void)test_wordsForward_count_option_info{
+    XVimWordInfo info;
+    info.findEndOfWord = TRUE;
+    NSUInteger to = 0; 
+    NSError* err = [[NSError alloc] init];
+    for (int i = 0; i < MAX_TESTCASES; i++) {
+        NSString* baseTestcaseName = [NSString stringWithFormat:@"wordsforward%d", i];
+        
+        NSString* testcase = [NSString stringWithContentsOfFile:[[NSBundle bundleWithIdentifier:@"weaksauce.unitTests"] pathForResource:baseTestcaseName ofType:@"test"] encoding:NSUTF8StringEncoding error:&err];
+        CHECK_FILE_ERROR(err, baseTestcaseName);
+        
+        if(testcase){
+            ((NSTextView *)[testsourceview view]).string = testcase;
+        }else {
+            break;
+        }
+        
+        NSString* testResults = [NSString stringWithContentsOfFile:[[NSBundle bundleWithIdentifier:@"weaksauce.unitTests"] pathForResource:baseTestcaseName ofType:@"testResults"] encoding:NSUTF8StringEncoding error:&err];
+        CHECK_FILE_ERROR(err, baseTestcaseName);
+        
+        
+        NSArray* results = [testResults componentsSeparatedByString:@"\n"];
+        
+        for(NSUInteger j = 1; j < [results count]; j++){
+            if([results count] >= j){break;};
+            NSArray* items = [[results objectAtIndex:j] componentsSeparatedByString:@" "];
+            if([items count] == 0) break;
+            NSInteger from = [(NSString*)[items objectAtIndex:0] integerValue];
+            NSInteger count = [[items objectAtIndex:1] integerValue];
+            NSInteger expectedResult = [[items objectAtIndex:2] integerValue];
+            
+            to = [testsourceview wordsForward:(NSUInteger)from count:(NSUInteger)count option:MOTION_OPTION_NONE info:&info];
+            STAssertEquals(expectedResult, to, @"words Forward failed from: %d, count: %d, expected:%d, actual: %lu", from, count, expectedResult, to); 
+        }
+        
+        
+    }
+
+    [testsourceview release];
+    testsourceview = nil;
+    STAssertNil(testsourceview, @"testsourceview not nil");
+}
 
 @end

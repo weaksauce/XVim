@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A216F3A1156560FE00AD2529 /* IDEEditorArea+XVim.m in Sources */ = {isa = PBXBuildFile; fileRef = A216F3A0156560FE00AD2529 /* IDEEditorArea+XVim.m */; };
-		A216F3A51565658F00AD2529 /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A31565658E00AD2529 /* IDEFoundation.framework */; };
-		A216F3A61565658F00AD2529 /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A41565658E00AD2529 /* IDEKit.framework */; };
-		A216F3A9156565AB00AD2529 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A7156565AA00AD2529 /* DVTFoundation.framework */; };
-		A216F3AA156565AB00AD2529 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A8156565AB00AD2529 /* DVTKit.framework */; };
+		693E06861565C2AD0014B1F3 /* wordsforward0.testResults in Resources */ = {isa = PBXBuildFile; fileRef = 693E06851565C2AD0014B1F3 /* wordsforward0.testResults */; };
+		693E06881565C6220014B1F3 /* wordsforward0.test in Resources */ = {isa = PBXBuildFile; fileRef = 693E06871565C6220014B1F3 /* wordsforward0.test */; };
 		695DEBA8155D8E850063129A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695DEBA7155D8E850063129A /* SenTestingKit.framework */; };
 		695DEBA9155D8E850063129A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B4BABB14D59F6600D817B0 /* Cocoa.framework */; };
 		695DEBAF155D8E850063129A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 695DEBAD155D8E850063129A /* InfoPlist.strings */; };
@@ -73,6 +70,11 @@
 		698A392F155EE94400BA6C7C /* XVimNumericEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = C38A5B4C1527CEA400E1448D /* XVimNumericEvaluator.m */; };
 		698A3930155EE94400BA6C7C /* XVimCommandLineEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = C3552D9A153948D200D57577 /* XVimCommandLineEvaluator.m */; };
 		698A3931155EE94400BA6C7C /* XVimEvaluatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C33484F6154032170050AA76 /* XVimEvaluatorContext.m */; };
+		A216F3A1156560FE00AD2529 /* IDEEditorArea+XVim.m in Sources */ = {isa = PBXBuildFile; fileRef = A216F3A0156560FE00AD2529 /* IDEEditorArea+XVim.m */; };
+		A216F3A51565658F00AD2529 /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A31565658E00AD2529 /* IDEFoundation.framework */; };
+		A216F3A61565658F00AD2529 /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A41565658E00AD2529 /* IDEKit.framework */; };
+		A216F3A9156565AB00AD2529 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A7156565AA00AD2529 /* DVTFoundation.framework */; };
+		A216F3AA156565AB00AD2529 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A216F3A8156565AB00AD2529 /* DVTKit.framework */; };
 		A222B5E11514DFCD005E8802 /* XVimOperatorEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = A222B5E01514DFCD005E8802 /* XVimOperatorEvaluator.m */; };
 		A2277ED414F80BCB00A6B70C /* XVimDeleteEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2277ED314F80BCB00A6B70C /* XVimDeleteEvaluator.m */; };
 		A2277ED814F80BFE00A6B70C /* XVimShiftEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2277ED714F80BFE00A6B70C /* XVimShiftEvaluator.m */; };
@@ -151,12 +153,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A216F39F156560FE00AD2529 /* IDEEditorArea+XVim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IDEEditorArea+XVim.h"; path = "XVim/IDEEditorArea+XVim.h"; sourceTree = SOURCE_ROOT; };
-		A216F3A0156560FE00AD2529 /* IDEEditorArea+XVim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IDEEditorArea+XVim.m"; path = "XVim/IDEEditorArea+XVim.m"; sourceTree = SOURCE_ROOT; };
-		A216F3A31565658E00AD2529 /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/Frameworks/IDEFoundation.framework; sourceTree = "<group>"; };
-		A216F3A41565658E00AD2529 /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/Frameworks/IDEKit.framework; sourceTree = "<group>"; };
-		A216F3A7156565AA00AD2529 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework; sourceTree = "<group>"; };
-		A216F3A8156565AB00AD2529 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework; sourceTree = "<group>"; };
+		693E06851565C2AD0014B1F3 /* wordsforward0.testResults */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordsforward0.testResults; sourceTree = "<group>"; };
+		693E06871565C6220014B1F3 /* wordsforward0.test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wordsforward0.test; path = testCases/wordsforward0.test; sourceTree = "<group>"; };
 		695DEBA6155D8E850063129A /* unitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		695DEBA7155D8E850063129A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		695DEBAC155D8E850063129A /* unitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "unitTests-Info.plist"; sourceTree = "<group>"; };
@@ -164,6 +162,12 @@
 		695DEBB0155D8E850063129A /* unitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unitTests.h; sourceTree = "<group>"; };
 		695DEBB1155D8E850063129A /* unitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = unitTests.m; sourceTree = "<group>"; };
 		695DEBB3155D8E850063129A /* unitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "unitTests-Prefix.pch"; sourceTree = "<group>"; };
+		A216F39F156560FE00AD2529 /* IDEEditorArea+XVim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IDEEditorArea+XVim.h"; path = "XVim/IDEEditorArea+XVim.h"; sourceTree = SOURCE_ROOT; };
+		A216F3A0156560FE00AD2529 /* IDEEditorArea+XVim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IDEEditorArea+XVim.m"; path = "XVim/IDEEditorArea+XVim.m"; sourceTree = SOURCE_ROOT; };
+		A216F3A31565658E00AD2529 /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/Frameworks/IDEFoundation.framework; sourceTree = "<group>"; };
+		A216F3A41565658E00AD2529 /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/Frameworks/IDEKit.framework; sourceTree = "<group>"; };
+		A216F3A7156565AA00AD2529 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework; sourceTree = "<group>"; };
+		A216F3A8156565AB00AD2529 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../../../../Developer/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework; sourceTree = "<group>"; };
 		A222B5DF1514DFCD005E8802 /* XVimOperatorEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XVimOperatorEvaluator.h; path = XVim/XVimOperatorEvaluator.h; sourceTree = SOURCE_ROOT; };
 		A222B5E01514DFCD005E8802 /* XVimOperatorEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XVimOperatorEvaluator.m; path = XVim/XVimOperatorEvaluator.m; sourceTree = SOURCE_ROOT; };
 		A2277ED214F80BCB00A6B70C /* XVimDeleteEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XVimDeleteEvaluator.h; path = XVim/XVimDeleteEvaluator.h; sourceTree = SOURCE_ROOT; };
@@ -327,9 +331,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		693E06831565C2830014B1F3 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				693E06851565C2AD0014B1F3 /* wordsforward0.testResults */,
+				693E06871565C6220014B1F3 /* wordsforward0.test */,
+			);
+			name = tests;
+			sourceTree = "<group>";
+		};
 		695DEBAA155D8E850063129A /* unitTests */ = {
 			isa = PBXGroup;
 			children = (
+				693E06831565C2830014B1F3 /* tests */,
 				695DEBB0155D8E850063129A /* unitTests.h */,
 				695DEBB1155D8E850063129A /* unitTests.m */,
 				695DEBAB155D8E850063129A /* Supporting Files */,
@@ -379,10 +393,6 @@
 		A2B4BAAD14D59F6600D817B0 = {
 			isa = PBXGroup;
 			children = (
-				A216F3A7156565AA00AD2529 /* DVTFoundation.framework */,
-				A216F3A8156565AB00AD2529 /* DVTKit.framework */,
-				A216F3A31565658E00AD2529 /* IDEFoundation.framework */,
-				A216F3A41565658E00AD2529 /* IDEKit.framework */,
 				A2C4E78F14E7EA0B00751199 /* Support */,
 				A2F41B0F14D70BD000A0314F /* Debug */,
 				A2B4BAC114D59F6600D817B0 /* XVim */,
@@ -396,6 +406,10 @@
 		A2B4BABA14D59F6600D817B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A216F3A7156565AA00AD2529 /* DVTFoundation.framework */,
+				A216F3A8156565AB00AD2529 /* DVTKit.framework */,
+				A216F3A31565658E00AD2529 /* IDEFoundation.framework */,
+				A216F3A41565658E00AD2529 /* IDEKit.framework */,
 				A2B4BABB14D59F6600D817B0 /* Cocoa.framework */,
 				695DEBA7155D8E850063129A /* SenTestingKit.framework */,
 				A2B4BABD14D59F6600D817B0 /* Other Frameworks */,
@@ -643,6 +657,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2B4BACA14D59F6600D817B0 /* Build configuration list for PBXNativeTarget "XVim" */;
 			buildPhases = (
+				693E06891566D4870014B1F3 /* ShellScript */,
 				A2B4BAB414D59F6600D817B0 /* Sources */,
 				A2B4BAB514D59F6600D817B0 /* Frameworks */,
 				A2B4BAB614D59F6600D817B0 /* Resources */,
@@ -689,6 +704,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				695DEBAF155D8E850063129A /* InfoPlist.strings in Resources */,
+				693E06861565C2AD0014B1F3 /* wordsforward0.testResults in Resources */,
+				693E06881565C6220014B1F3 /* wordsforward0.test in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +720,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		693E06891566D4870014B1F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export XCODE_PATH=\"`xcode-select --print-path`\"";
+		};
 		695DEBA4155D8E850063129A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -875,7 +905,10 @@
 		695DEBB5155D8E850063129A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "unitTests/unitTests-Prefix.pch";
@@ -888,7 +921,10 @@
 		695DEBB6155D8E850063129A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
+				);
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "unitTests/unitTests-Prefix.pch";
@@ -906,10 +942,8 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					/Applications/Xcode.app/Contents/SharedFrameworks,
-					/Applications/Xcode.app/Contents/Frameworks,
-					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
-					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
+					"$(XCODE_PATH)/Contents/SharedFrameworks",
+					"$(XCODE_PATH)/Contents/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -943,10 +977,8 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					/Applications/Xcode.app/Contents/SharedFrameworks,
-					/Applications/Xcode.app/Contents/Frameworks,
-					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
-					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
+					"$(XCODE_PATH)/Contents/SharedFrameworks",
+					"$(XCODE_PATH)/Contents/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -966,18 +998,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Frameworks,
-					/Applications/Xcode.app/Contents/SharedFrameworks,
-				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					/Developer/Applications/Xcode.app/Contents/Frameworks,
-					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
-					/Applications/Xcode.app/Contents/Frameworks,
-					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XVim/XVim-Prefix.pch";
@@ -985,7 +1007,7 @@
 				INFOPLIST_FILE = XVim/Info.plist;
 				INSTALL_PATH = "";
 				PRODUCT_NAME = XVim;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) /Developer/Applications/Xcode.app/Contents/Frameworks /Developer/Applications/Xcode.app/Contents/SharedFrameworks /Applications/Xcode.app/Contents/Frameworks /Applications/Xcode.app/Contents/SharedFrameworks";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
@@ -994,11 +1016,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Developer/Applications/Xcode.app/Contents/Frameworks,
-					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XVim/XVim-Prefix.pch";
@@ -1006,7 +1024,7 @@
 				INFOPLIST_FILE = XVim/Info.plist;
 				INSTALL_PATH = "";
 				PRODUCT_NAME = XVim;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) /Developer/Applications/Xcode.app/Contents/Frameworks /Developer/Applications/Xcode.app/Contents/SharedFrameworks /Applications/Xcode.app/Contents/Frameworks /Applications/Xcode.app/Contents/SharedFrameworks";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Release;
