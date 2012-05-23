@@ -942,8 +942,10 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(XCODE_PATH)/Contents/SharedFrameworks",
-					"$(XCODE_PATH)/Contents/Frameworks",
+					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
+					/Developer/Applications/Xcode.app/Contents/Frameworks,
+					/Applications/Xcode.app/Contents/Frameworks,
+					/Applications/Xcode.app/Contents/SharedFrameworks,
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -977,8 +979,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(XCODE_PATH)/Contents/SharedFrameworks",
-					"$(XCODE_PATH)/Contents/Frameworks",
+					/Developer/Applications/Xcode.app/Contents/SharedFrameworks,
+					/Developer/Applications/Xcode.app/Contents/Frameworks,
+					/Applications/Xcode.app/Contents/Frameworks,
+					/Applications/Xcode.app/Contents/SharedFrameworks,
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
