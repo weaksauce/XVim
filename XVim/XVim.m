@@ -39,6 +39,9 @@
 #import "XVimHookManager.h"
 #import "XVimCommandLine.h"
 
+#import "IDEKit.h"
+#import "IDEApplicationControllerHook.h"
+
 static XVim* s_instance = nil;
 
 @interface XVim() {
@@ -110,7 +113,9 @@ static XVim* s_instance = nil;
 //////////////////////////////
 // XVim Instance Methods /////
 //////////////////////////////
-
+-(void) toggleXVim:(id) sender{
+   NSLog(@"toggled");
+}
 - (id)init
 {
 	if (self = [super init])

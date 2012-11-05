@@ -12,6 +12,8 @@
 #import "IDESourceCodeEditorHook.h"
 #import "DVTSourceTextScrollViewHook.h"
 #import "IDEEditorHook.h"
+#import "XVim.h"
+#define toggleXVimMenuitemTag 345623
 
 @implementation XVimHookManager
 
@@ -27,20 +29,22 @@
     //[DVTSourceTextScrollViewHook hook];
     [IDEEditorHook hook];
 //    IDEApplicationController * appdel = [IDEApplicationController sharedAppController];
-    // NSLog(@"Appcontroller is %@", appdel);
-    //NSLog(@"%@", [appdel->_windowController class]);
-//    [appdel accessInternalVariable];
-    //[Logger traceIvarList:@"IDEApplicationController"];
-//    NSLog(@"appdel->windowcontroller %@", [appdel valueForKey:@"_windowController"]);
-//    NSLog(@"file menu: %@", [appdel _fileMenu]);
     NSMenu* main = [NSApp mainMenu];
     
-    NSLog(@"main menu: %@", main);
     NSMenu* xvimMenu = [[NSMenu alloc] initWithTitle:@"XVim"];
-    NSMenuItem *xvimMenuitem = [[NSMenuItem alloc] initWithTitle:@"XVim" action:nil keyEquivalent:@"x"];
+    NSMenuItem *xvimMenuitem = [[NSMenuItem alloc] initWithTitle:@"XVim" action:nil keyEquivalent:@""];
+    [xvimMenuitem setSubmenu:xvimMenu];
     [main addItem:xvimMenuitem];
-    [main setSubmenu:xvimMenu forItem:xvimMenuitem];
-    NSLog(@"main menu: %@", main);
+    [xvimMenu release];
+    [xvimMenuitem release];
+    
+    xvimMenuitem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Toggle XVim on/off" action:NULL keyEquivalent:@""];
+    [xvimMenuitem setTag:toggleXVimMenuitemTag];
+    [xvimMenuitem setTarget:[XVim instance]];
+    [xvimMenuitem setAction:@selector(toggleXVim:)];
+    [xvimMenu addItem:xvimMenuitem];
+    [xvimMenuitem release];
+//    [main setSubmenu:xvimMenu forItem:xvimMenuitem];
 }
 
 @end
