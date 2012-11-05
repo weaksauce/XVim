@@ -26,6 +26,21 @@
 	[IDESourceCodeEditorHook hook];
     //[DVTSourceTextScrollViewHook hook];
     [IDEEditorHook hook];
+//    IDEApplicationController * appdel = [IDEApplicationController sharedAppController];
+    // NSLog(@"Appcontroller is %@", appdel);
+    //NSLog(@"%@", [appdel->_windowController class]);
+//    [appdel accessInternalVariable];
+    //[Logger traceIvarList:@"IDEApplicationController"];
+//    NSLog(@"appdel->windowcontroller %@", [appdel valueForKey:@"_windowController"]);
+//    NSLog(@"file menu: %@", [appdel _fileMenu]);
+    NSMenu* main = [NSApp mainMenu];
+    
+    NSLog(@"main menu: %@", main);
+    NSMenu* xvimMenu = [[NSMenu alloc] initWithTitle:@"XVim"];
+    NSMenuItem *xvimMenuitem = [[NSMenuItem alloc] initWithTitle:@"XVim" action:nil keyEquivalent:@"x"];
+    [main addItem:xvimMenuitem];
+    [main setSubmenu:xvimMenu forItem:xvimMenuitem];
+    NSLog(@"main menu: %@", main);
 }
 
 @end
