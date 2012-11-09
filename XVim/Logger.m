@@ -178,6 +178,20 @@ static Logger* s_defaultLogger = nil;
     }
 }
 
++ (void) traceIvarList:(NSString*)class{
+    Ivar *currentIvars;
+    unsigned int ivarCount;
+    currentIvars = class_copyIvarList(NSClassFromString(class), &ivarCount);
+    if(ivarCount){
+        for (int i = 0; i < ivarCount; i++) {
+            NSLog(@"%s", ivar_getName(currentIvars[i])); ;
+        }
+    }
+    if(currentIvars){
+        free(currentIvars);
+    }
+}
+
 + (void) logAvailableClasses:(LogLevel)l{
     int numClasses;
     Class * classes = NULL;

@@ -51,6 +51,7 @@ typedef enum LogLevel_t{
 
 // Support Functions
 + (void) traceMethodList:(NSString*)class;
++ (void) traceIvarList:(NSString*)class;
 + (void) logAvailableClasses:(LogLevel)level;
 + (void) traceViewInfo:(NSView*)obj subView:(BOOL)sub;
 + (void)traceView:(NSView*)view depth:(NSUInteger)depth;
