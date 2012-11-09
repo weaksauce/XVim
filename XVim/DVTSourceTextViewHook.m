@@ -22,6 +22,8 @@
 #import "DVTSourceTextView+XVim.h"
 #import "NSEvent+VimHelper.h"
 
+#define xvimEnabled [[[[XVim instance] options] getOption:@"enabled"] boolValue]
+
 @implementation DVTSourceTextViewHook
 
 + (void)hook
@@ -91,7 +93,7 @@
 -  (void)keyDown:(NSEvent *)theEvent{
 	DVTSourceTextView *base = (DVTSourceTextView*)self;
     XVimWindow* window = [XVimWindow associateOf:base];
-    if( nil == window ){
+    if( nil == window || !xvimEnabled){
         [base keyDown_:theEvent];
         return;
     }
@@ -110,14 +112,15 @@
 -  (void)mouseDown:(NSEvent *)theEvent{
 	DVTSourceTextView *base = (DVTSourceTextView*)self;
     XVimWindow* window = [XVimWindow associateOf:base];
-	if (window)
+    BOOL enabled = xvimEnabled;
+	if (window && enabled)
 	{
 		[window beginMouseEvent:theEvent];
 	}
    
 	[base mouseDown_:theEvent]; // this loops until it gets a mouse up
 
-    if (window)
+    if (window && enabled)
 	{
 		[window endMouseEvent:theEvent];
     }
