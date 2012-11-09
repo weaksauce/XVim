@@ -42,4 +42,5 @@
 - (NSString*)pasteText:(XVimRegister*)yankRegister;
 - (void)writeToLogfile:(NSString*)str;
     
+-(void) toggleXVim:(id) sender;
 @end

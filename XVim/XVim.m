@@ -24,6 +24,7 @@
 // 
 
 
+#define toggleXVimMenuitemTag 344532
 
 #import "XVim.h"
 #import "Logger.h"
@@ -38,9 +39,10 @@
 #import "XVimHistoryHandler.h"
 #import "XVimHookManager.h"
 #import "XVimCommandLine.h"
+#import "XVimMenuController.h"
 
-#import "IDEKit.h"
-#import "IDEApplicationControllerHook.h"
+//#import "IDEKit.h"
+//#import "IDEApplicationControllerHook.h"
 
 static XVim* s_instance = nil;
 
@@ -64,6 +66,8 @@ static XVim* s_instance = nil;
 @synthesize characterSearcher = _characterSearcher;
 @synthesize excmd = _excmd;
 @synthesize options = _options;
+
+XVimMenuController* _xvimMenuController;
 
 +(void)receiveNotification:(NSNotification*)notification{
     if( [notification.name hasPrefix:@"IDE"] || [notification.name hasPrefix:@"DVT"] ){
@@ -103,6 +107,9 @@ static XVim* s_instance = nil;
                                   selector: @selector( hookWhenDidFinishLaunching )
                                    name: NSApplicationDidFinishLaunchingNotification
                                  object: nil];
+    
+    //hook into the menu system for graphical controls.
+    _xvimMenuController = [[XVimMenuController alloc] initWithMenus];
 }
 
 + (XVim*)instance
@@ -113,9 +120,27 @@ static XVim* s_instance = nil;
 //////////////////////////////
 // XVim Instance Methods /////
 //////////////////////////////
+
 -(void) toggleXVim:(id) sender{
-   NSLog(@"toggled");
+    BOOL enabled = ![[_options getOption:@"enabled"] boolValue];
+    [_options setOption:@"enabled" value:[NSNumber numberWithBool:enabled]];
 }
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem{
+    
+    NSInteger tag = [menuItem tag];
+    if(tag == toggleXVimMenuitemTag){
+        XVimOptions* opt = [[XVim instance] options];
+        if(opt.enabled){
+            [menuItem setState:NSOnState];
+            [menuItem setTitle:@"Turn XVim Off"];
+        }else{
+            [menuItem setState:NSOffState];
+            [menuItem setTitle:@"Turn XVim On"];
+        }
+    }
+    return true;
+}
+
 - (id)init
 {
 	if (self = [super init])
@@ -126,6 +151,9 @@ static XVim* s_instance = nil;
 		_searcher = [[XVimSearch alloc] init];
 		_characterSearcher = [[XVimCharacterSearch alloc] init];
 		_options = [[XVimOptions alloc] init];
+        
+
+        
 		// From the vim documentation:
 		// There are nine types of registers:
 		// *registers* *E354*
@@ -228,6 +256,7 @@ static XVim* s_instance = nil;
 	[_characterSearcher release];
     [_excmd release];
     [_logFile release];
+    [_xvimMenuController release];
 	[super dealloc];
 }
 
