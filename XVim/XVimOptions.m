@@ -15,6 +15,8 @@
 @end
 
 @implementation XVimOptions
+
+@synthesize enabled = _enabled;
 @synthesize ignorecase = _ignorecase;
 @synthesize wrapscan = _wrapscan;
 @synthesize errorbells = _errorbells;
@@ -37,6 +39,7 @@
          @"gdefault",@"gd",
          @"smartcase",@"scs",
          @"timeoutlen",@"tm",
+         @"enabled",@"en",
          nil];
         
         // Default values
@@ -48,6 +51,7 @@
 		_smartcase = NO;
 		_guioptions = @"rb";
         _timeoutlen = @"1000";
+        _enabled = YES;
     }
     return self;
 }

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface XVimOptions : NSObject
+@property BOOL enabled;
 @property BOOL ignorecase;
 @property BOOL wrapscan;
 @property BOOL errorbells;
